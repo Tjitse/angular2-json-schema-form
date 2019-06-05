@@ -22,6 +22,7 @@ import { JsonSchemaFormService } from '../json-schema-form.service';
         [attr.placeholder]="options?.placeholder"
         [attr.required]="options?.required"
         [class]="options?.fieldHtmlClass || ''"
+        [disabled]="controlDisabled"
         [id]="'control' + layoutNode?._id"
         [name]="controlName"
         [readonly]="options?.readonly ? 'readonly' : null"
@@ -71,5 +72,10 @@ export class InputComponent implements OnInit {
 
   updateValue(event) {
     this.jsf.updateValue(this, event.target.value);
+  }
+
+  setDisabled() {
+    this.controlDisabled = true;
+    this.formControl.disable();
   }
 }

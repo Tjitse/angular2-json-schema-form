@@ -73,6 +73,11 @@ export class RootComponent {
   }
 
   showWidget(layoutNode: any): boolean {
-    return this.jsf.evaluateCondition(layoutNode, this.dataIndex);
+    var condition = this.jsf.evaluateCondition(layoutNode, this.dataIndex);
+    if (!condition) {
+      //this.jsf.data[layoutNode.name] = "";
+      delete this.jsf.data[layoutNode.name];
+    }
+    return condition;
   }
 }

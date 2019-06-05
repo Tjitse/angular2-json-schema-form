@@ -50,4 +50,9 @@ export class ButtonComponent implements OnInit {
       this.jsf.updateValue(this, event.target.value);
     }
   }
+  
+  setDisabled() {
+    this.controlDisabled = true;
+    this.formControl.disable();
+  }
 }

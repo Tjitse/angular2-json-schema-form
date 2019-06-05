@@ -130,4 +130,5 @@ export class SectionComponent implements OnInit {
         return this.options[attribute];
     }
   }
+  
 }

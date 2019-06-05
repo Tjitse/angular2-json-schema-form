@@ -100,4 +100,9 @@ export class CheckboxesComponent implements OnInit {
       this.jsf.updateArrayCheckboxList(this, this.checkboxList);
     }
   }
+  
+  setDisabled() {
+    this.controlDisabled = true;
+    this.formControl.disable();
+  }
 }
