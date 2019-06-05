@@ -544,7 +544,6 @@ export function buildLayoutFromSchema(
       nodeDataMap.set('required', schema.required);
     }
     if (isObject(schema.properties)) {
-      const newSection: any[] = [];
       const propertyKeys = schema['ui:order'] || Object.keys(schema.properties);
       if (propertyKeys.includes('*') && !hasOwn(schema.properties, '*')) {
         const unnamedKeys = Object.keys(schema.properties)
